@@ -1,4 +1,34 @@
-##### Prerequisites
+## Summary of thought process
+
+I aimed to develop a production-level rails app, to showcase both ruby and rails knowledge. Although there wasn't a requirement for an API layer, controllers can easily be built out with the service objects in place, if needed. The models are backed by PostgreSQL tables. For formulating the algorithm, I opted for an SQL approach to simulate a real-world matching query, that may be found in a complex data schema. I introduced additional features such as quantity and prices, enabling users to create orders across multiple sellers. I also bundled the concepts of buyer and seller into a single table, envisioning a scenario where a seller could also act as a buyer, similar to the functionality on Airbnb - where a host can also make bookings.
+
+WIP:  **`OrderService::CancelOrder`** and **`OrderService::CancelOrderDetail`** spec!
+
+I adopted a 'Service Object' approach in the application's design to declutter the models, define actions in an understandable namespace, and to facilitate future composition of service objects with actions across multiple models.
+
+## Overview of app
+
+#### Models
+- [User](https://github.com/cblokker/produce_server/blob/main/app/models/user.rb)
+- [Order](https://github.com/cblokker/produce_server/blob/main/app/models/order.rb)
+- [OrderDetail](https://github.com/cblokker/produce_server/blob/main/app/models/order_detail.rb)
+- [InventoryItem](https://github.com/cblokker/produce_server/blob/main/app/models/inventory_item.rb)
+- [Produce](https://github.com/cblokker/produce_server/blob/main/app/models/produce.rb)
+
+#### Service Objects
+- [OrderService::PurchaseOrder](https://github.com/cblokker/produce_server/blob/main/app/services/order_service/purchase_order.rb)
+- [OrderService::CancelOrder](https://github.com/cblokker/produce_server/blob/main/app/services/order_service/cancel_order.rb)
+- [OrderService::CancelOrderDetail](https://github.com/cblokker/produce_server/blob/main/app/services/order_service/cancel_order_detail.rb)
+
+#### Query Objects
+- [UserQueries::MatchBuyerToSellers](https://github.com/cblokker/produce_server/blob/main/app/queries/user_queries/match_buyer_to_sellers.rb)
+- [UserQueries::MatchSellerToBuyers](https://github.com/cblokker/produce_server/blob/main/app/queries/user_queries/match_seller_to_buyers.rb)
+
+#### Table Views [scenic gem](https://github.com/scenic-views/scenic)
+- [buyer_produce_orders](https://github.com/cblokker/produce_server/blob/main/db/views/buyer_produce_orders_v01.sql)
+
+
+## SETUP
 
 The setups steps expect following tools installed on the system.
 
@@ -48,5 +78,7 @@ bundle exec rspec
 ```
 
 ##### 5. Server not needed for this example.
+
+
 
 
