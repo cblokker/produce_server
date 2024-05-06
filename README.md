@@ -4,7 +4,7 @@ I aimed to develop a production-level rails app, to showcase both ruby and rails
 
 WIP:  **`OrderService::CancelOrder`** and **`OrderService::CancelOrderDetail`** spec!
 
-I adopted a 'Service Object' approach in the application's design to declutter the models, define actions in an understandable namespace, and to facilitate future composition of service objects with actions across multiple models.
+I adopted a 'Service Object' approach in the application's design to declutter the models, define actions in an understandable namespace, and to facilitate future composition of service objects with actions across multiple models. I avioded Active Record callbacks, and placed that logic in the service objects, to ensure the app does not get entangled in unexpected callback behavior.
 
 ## Overview of app
 
