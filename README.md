@@ -2,9 +2,11 @@
 
 I aimed to develop a production-level rails app, to showcase both ruby and rails knowledge. Although there wasn't a requirement for an API layer, controllers can easily be built out with the service objects in place, if needed. The models are backed by PostgreSQL tables. For formulating the algorithm, I opted for an SQL approach to simulate a real-world matching query, that may be found in a complex data schema. I introduced additional features such as quantity and prices, enabling users to create orders across multiple sellers. I also bundled the concepts of buyer and seller into a single table, envisioning a scenario where a seller could also act as a buyer, similar to the functionality on Airbnb - where a host can also make bookings.
 
-WIP:  **`OrderService::CancelOrder`** and **`OrderService::CancelOrderDetail`** spec!
+WIP:
+- **`OrderService::CancelOrder`** and **`OrderService::CancelOrderDetail`** specs!
+- Test against large datasets for query performance, to be able to perform updates & optimizations for the query objects & table view.
 
-I adopted a 'Service Object' approach in the application's design to declutter the models, define actions in an understandable namespace, and to facilitate future composition of service objects with actions across multiple models. I avioded Active Record callbacks, and placed that logic in the service objects, to ensure the app does not get entangled in unexpected callback behavior.
+I adopted a 'Service Object' approach in the application's design to declutter the models, define actions in an understandable namespace, and to facilitate future composition of service objects with actions across multiple models. I avoided Active Record callbacks, and placed that logic in the service objects, to ensure the app does not get entangled in unexpected callback behavior.
 
 ## Overview of app
 
