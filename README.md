@@ -42,22 +42,11 @@ rails db:create db:migrate db:seed
 
 ##### 4. Run the tests
 
-You can start the rails server using the command given below.
 
 ```ruby
 bundle exec rspec
 ```
 
-And now you can visit the site with the URL http://localhost:3000
-
-Create Postgres role
-`sudo postgres`
-`psql`
-`create role produce_marketpalce_api with createdb login password 'password1';`
-exit out of cli
-
-Run the following to create db, migrate db, and seed dev environment with some data to play with.
-`rails db:drop db:create db:migrate`
+##### 5. Server not needed for this example.
 
 
-Things to ponder:
