@@ -34,7 +34,7 @@ WIP:
 - [buyer_produce_orders](https://github.com/cblokker/produce_server/blob/main/db/views/buyer_produce_orders_v01.sql)
 
 #### Misc
-- [Seed File](https://github.com/cblokker/produce_server/blob/main/db/seeds.rb) - this is just to have some test data in rails c
+- [Seed File](https://github.com/cblokker/produce_server/blob/main/db/seeds.rb) - to have some test data to play with in `rails c`. Note that it isn't very idempotent.
 
 
 ## SETUP
