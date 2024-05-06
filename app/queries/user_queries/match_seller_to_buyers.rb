@@ -18,7 +18,7 @@ module UserQueries
     # NOTE: Made assumption we want same interval threshold on a buyers order profile
     #       to match against valid prospective buyers.
     def produce_preferred_buyer_ids
-      @buyers_preferred_produce_ids ||= BuyerProduceOrder
+      @produce_preferred_buyer_ids ||= BuyerProduceOrder
         .where(produce_id: seller_produce_ids)
         .where('((next_order_date - order_date) <= INTERVAL ?)', "#{rolling_period_size} days")
         .group(:buyer_id)
