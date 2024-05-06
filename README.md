@@ -1,29 +1,54 @@
-# README
+##### Prerequisites
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The setups steps expect following tools installed on the system.
 
-Things you may want to cover:
+- Ruby 3.1.2
+- Rails 7.1.3.2
+- PostgreSQL 14.11
 
-* Ruby version
+##### 1. Check out the repository & bundle
 
-* System dependencies
+```bash
+git clone https://github.com/cblokker/produce_server.git
+```
 
-* Configuration
+```bash
+bundle install
+```
 
-* Database creation
+##### 2. Create postres role. [A reference](https://www.digitalocean.com/community/tutorials/how-to-set-up-ruby-on-rails-with-postgres)
+ - a) For PostgreSQL server, run:
+   ```bash
+   sudo postgres
+   ```
+ - b) For PostgreSQL interactive terminal, run:
+   ```bash
+   psql
+   ```
+ - c) Run the following command in the interactive terminal:
+ 
+   ```bash
+   create role produce_marketpalce_api with createdb login password 'password1';
+   ```
 
-* Database initialization
 
-* How to run the test suite
+##### 3. Create and setup the database
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the following commands to create and setup the database, including some seed data to play around with.
 
-* Deployment instructions
+```ruby
+rails db:create db:migrate db:seed
+```
 
-* ...
+##### 4. Run the tests
 
+You can start the rails server using the command given below.
 
+```ruby
+bundle exec rspec
+```
+
+And now you can visit the site with the URL http://localhost:3000
 
 Create Postgres role
 `sudo postgres`
@@ -36,10 +61,3 @@ Run the following to create db, migrate db, and seed dev environment with some d
 
 
 Things to ponder:
-
-1. Storing Currency (3-letter ISO 4217 currency code) and currency conversions for internationlization.
-2. Storing unit of weight and weight conversions for internationlization.
-3. Using decimal instead of int for more granular precition of weight, based on business use case (and for unit conversions).
-4. Add quantities on a per unit level
-5. Adding AASM gem to encapuslate state machine logic for orders.
-6. 
