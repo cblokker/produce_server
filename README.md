@@ -33,6 +33,9 @@ WIP:
 #### Table Views [scenic gem](https://github.com/scenic-views/scenic)
 - [buyer_produce_orders](https://github.com/cblokker/produce_server/blob/main/db/views/buyer_produce_orders_v01.sql)
 
+#### Misc
+- [Seed File](https://github.com/cblokker/produce_server/blob/main/db/seeds.rb) - this is just to have some test data in rails c
+
 
 ## SETUP
 
